@@ -1,0 +1,44 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/book_social_network
+    username: username
+    password: password
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true #when hibernate runs a query it will display in the console of my IDE
+    properties:
+      hibernate:
+        format_sql: true #the query will be well formated
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  mail:
+    host: localhost
+    port: 1025
+    username: sarra
+    password: sarra
+    properties:
+      mail:
+        smtp:
+         trust: "*"
+        auth: true
+        starttls:
+          enabled: true
+          connectiontimeout: 5000
+          timeout: 3000
+          writetimeout: 5000
+
+application:
+  security:
+    jwt:
+      secret-key: "ilJCTdK+JMzsCgsk6oOkcOL/+OtSaHJ++143lOe2L+E="
+      expiration: 8640000
+  mailing:
+    frontend:
+      activation-url: http://localhost:4200/activate-account
+
+server:
+  port: 8088
+
